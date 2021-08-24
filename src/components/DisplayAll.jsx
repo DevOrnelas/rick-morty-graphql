@@ -1,4 +1,5 @@
 import { gql, useQuery} from "@apollo/client";
+import {useState} from 'react'
 
 const GET_CHARACTERS = gql`
   {
@@ -21,11 +22,11 @@ const GET_CHARACTERS = gql`
 
 const DisplayAll = (props) => {
  const {loading, error, data} = useQuery(GET_CHARACTERS)
+ const [value, setValue] = useState('')
  if(loading) return <p>Loading...</p>
  if(error) return <p>Error Loading :*( ...</p>
 
-  console.log(data.characters.results)
-  let List = data.characters.results.map(character => {
+  let List = data.characters.results.filter(p => p.name.toLowerCase().includes(value)).map((character)=>{
     return (
       <div className="card">
       <img
@@ -51,6 +52,10 @@ const DisplayAll = (props) => {
 
 
   return (
+    <>
+    <div className="inputWrap">
+      <input className="inputFilter"  placeholder="Search..." type="text" onChange={e => setValue(e.target.value)}></input>
+    </div>
     <div className="myContainer">
       <div className="card">
         <img
@@ -72,7 +77,9 @@ const DisplayAll = (props) => {
       </div>
       {List}
     </div>
+    </>
   );
 };
 
 export default DisplayAll
+

@@ -62,3 +62,17 @@ img {
 .card-desc {
   text-align: center;
 }
+
+.inputWrap{
+  text-align: center;
+}
+
+.inputFilter{
+  width: 400px;
+  height: 25px;
+}
+
+.inputFilter:focus{
+  outline-style: none;
+  outline: none;
+}
