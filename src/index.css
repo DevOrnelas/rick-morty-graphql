@@ -1,13 +1,64 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:100,200,300,regular,500,600,700,100italic,200italic,300italic,italic,500italic,600italic,700italic);
+
+*,*::before, *::after{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: Roboto Mono;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    background-color: bisque;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.mainTitle{
+font-size: 55px;
+text-align: center;
+padding-top: 55px;
+}
+.mainSub{
+  text-align: center;
+  font-size: 55px;
+  padding-bottom: 44px;
+}
+.myContainer {
+  width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.title,
+.titleSecondary {
+  font-size: 44px;
+  font-style: bold;
+  font-weight: 8899;
+  text-align: center;
+}
+
+.card {
+  width: 300px;
+  padding: 10px;
+  margin: 10px;
+}
+
+img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 25px;
+}
+
+.card-desc {
+  text-align: center;
 }
